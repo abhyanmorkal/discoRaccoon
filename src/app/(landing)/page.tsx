@@ -18,7 +18,7 @@ const Page = () => {
       fields: {
         plan: "PRO",
         email: "abhyanmorkal@gmail.com",
-        amount: 49.00
+        amount: "$49.00"
       }
    }),
    headers: {
