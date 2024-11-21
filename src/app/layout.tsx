@@ -7,10 +7,15 @@ import { cn } from "@/utils"
 import "./globals.css"
 import { ClerkProvider } from "@clerk/nextjs"
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-sans" })
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-sans",
+  weight: ["400", "700"], // Only necessary weights
+})
 const eb_garamond = EB_Garamond({
   subsets: ["latin"],
   variable: "--font-heading",
+  weight: ["400"], // Only necessary weights
 })
 
 export const metadata: Metadata = {
@@ -27,7 +32,7 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en" className={cn(inter.variable, eb_garamond.variable)}>
-        <body className="min-h-[calc(100vh-1px)] flex flex-col font-sans bg-brand-50 text-brand-950 antialiased antialiased">
+        <body className="min-h-[calc(100vh-1px)] flex flex-col font-sans bg-brand-50 text-brand-950 antialiased">
           <main className="relative flex-1 flex flex-col">
             <Providers>{children}</Providers>
           </main>
