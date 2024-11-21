@@ -1,5 +1,5 @@
 import { PropsWithChildren } from "react"
-import { Icons } from "./icon"
+import { Icons } from "./icons"
 import {
   Cog,
   Gift,
@@ -19,7 +19,7 @@ import {
 } from "lucide-react"
 import Image from "next/image"
 
-export const MockDiscordUi = ({ children }: PropsWithChildren) => {
+export const MockDiscordUI = ({ children }: PropsWithChildren) => {
   return (
     <div className="flex min-h-[800px] w-full max-w-[1200px] bg-discord-background text-white rounded-lg overflow-hidden shadow-xl">
       {/* server list */}
@@ -33,7 +33,7 @@ export const MockDiscordUi = ({ children }: PropsWithChildren) => {
         {[...Array(5)].map((_, i) => (
           <div
             key={i}
-            className="size-12 bg-discord—background rounded-3xl flex items-center justify-center mb-3 hover:rounded-xl transition-all duration-200 hover:bg-discord-brand-color cursor-not-allowed"
+            className="size-12 bg-discord-background rounded-3xl flex items-center justify-center mb-3 hover:rounded-xl transition-all duration-200 hover:bg-discord-brand-color cursor-not-allowed"
           >
             <span className="text-lg font-semibold text-gray-400">
               {String.fromCharCode(65 + i)}
@@ -41,7 +41,7 @@ export const MockDiscordUi = ({ children }: PropsWithChildren) => {
           </div>
         ))}
 
-        <div className="group mt-auto size-12 bg-discord—background rounded-3xl flex items-center justify-center mb-3 hover:rounded-xl transition-all duration-200 hover:bg-[#3ba55c] cursor-not-allowed">
+        <div className="group mt-auto size-12 bg-discord-background rounded-3xl flex items-center justify-center mb-3 hover:rounded-xl transition-all duration-200 hover:bg-[#3ba55c] cursor-not-allowed">
           <PlusCircle className="text-[#3ba55c] group-hover:text-white" />
         </div>
       </div>
@@ -74,12 +74,12 @@ export const MockDiscordUi = ({ children }: PropsWithChildren) => {
             <div className="flex items-center px-2 py-1.5 rounded bg-[#393c43] text-white cursor-pointer">
               <Image
                 src="/brand-asset-profile-picture.png"
-                alt="DiscoRaccoon Avatar"
+                alt="PingPanda Avatar"
                 width={32}
                 height={32}
                 className="object-cover rounded-full mr-3"
               />
-              <span className="font-medium">DiscoRaccoon</span>
+              <span className="font-medium">PingPanda</span>
             </div>
 
             <div className="my-1 space-y-px">
@@ -125,7 +125,7 @@ export const MockDiscordUi = ({ children }: PropsWithChildren) => {
             <div className="relative">
               <Image
                 src="/brand-asset-profile-picture.png"
-                alt="DiscoRaccoon Avatar"
+                alt="PingPanda Avatar"
                 width={40}
                 height={40}
                 className="object-cover rounded-full mr-3"
@@ -133,7 +133,7 @@ export const MockDiscordUi = ({ children }: PropsWithChildren) => {
               <div className="absolute bottom-0 right-3 size-3 bg-green-500 rounded-full border-2 border-[#36393f]" />
             </div>
 
-            <p className="font-semibold text-white">DiscoRaccoon</p>
+            <p className="font-semibold text-white">PingPanda</p>
           </div>
 
           <div className="ml-auto flex items-center space-x-4 text-[#b9bbbe]">
@@ -148,18 +148,18 @@ export const MockDiscordUi = ({ children }: PropsWithChildren) => {
         </div>
 
         {/* message history */}
-        <div className="flex-1 overflow-y-auto p-4 bg-discord—background flex flex-col-reverse">
+        <div className="flex-1 overflow-y-auto p-4 bg-discord-background flex flex-col-reverse">
           {children}
         </div>
 
         {/* message input */}
-        <div className="p-4 bg-discord—background">
+        <div className="p-4">
           <div className="flex items-center bg-[#40444b] rounded-lg p-1">
             <PlusCircle className="mx-3 text-[#b9bbbe] hover:text-white cursor-not-allowed" />
             <input
               readOnly
               type="text"
-              placeholder="Message @DiscoRaccoon"
+              placeholder="Message @PingPanda"
               className="flex-1 bg-transparent py-2.5 px-1 text-white placeholder-[#72767d] focus:outline-none cursor-not-allowed"
             />
             <div className="flex items-center space-x-3 mx-3 text-[#b9bbbe]">

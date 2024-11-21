@@ -2,68 +2,71 @@ import { Heading } from "@/components/heading"
 import { MaxWidthWrapper } from "@/components/max-width-wrapper"
 import { Check, Star } from "lucide-react"
 import { ShinyButton } from "@/components/shiny-button"
-import { MockDiscordUi } from "@/components/mock-discord-ui"
+import { MockDiscordUI } from "@/components/mock-discord-ui"
 import { AnimatedList, AnimatedListItem } from "@/components/ui/animated-list"
 import { DiscordMessage } from "@/components/discord-message"
 import Image from "next/image"
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter"
 import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism"
-import { Icons } from "@/components/icon"
+import { Icons } from "@/components/icons"
 
 const Page = () => {
-  const codeSnippet = `await fetch("http://localhost:3000/api/v1/events",
-  { method: "POST",
-    body: JSON.stringify({
-      category: "sale",
-      fields: {
-        plan: "PRO",
-        email: "abhyanmorkal@gmail.com",
-        amount: "$49.00"
-      }
-   }),
-   headers: {
+  const codeSnippet = `await fetch("http://localhost:3000/api/v1/events", {
+  method: "POST",
+  body: JSON.stringify({
+    category: "sale",
+    fields: {
+      plan: "PRO",
+      email: "zoe.martinez2001@email.com",
+      amount: 49.00
+    }
+  }),
+  headers: {
     Authorization: "Bearer <YOUR_API_KEY>"
-   }
-  })`
+  }
+})`
+
   return (
     <>
       <section className="relative py-24 sm:py-32 bg-brand-25">
-        <MaxWidthWrapper>
+        <MaxWidthWrapper className="text-center">
           <div className="relative mx-auto text-center flex flex-col items-center gap-10">
             <div>
               <Heading>
-                <span>Real-Time Saas Insights</span>
+                <span>Real-Time SaaS Insights,</span>
                 <br />
                 <span className="relative bg-gradient-to-r from-brand-700 to-brand-800 text-transparent bg-clip-text">
-                  Delivered to your Discord
+                  Delivered to Your Discord
                 </span>
               </Heading>
             </div>
 
             <p className="text-base/7 text-gray-600 max-w-prose text-center text-pretty">
-              DiscoRaccoon is the easiest way to monitor your SaaS, Get instant
-              notificaiton for{" "}
+              PingPanda is the easiest way to monitor your SaaS. Get instant
+              notifications for{" "}
               <span className="font-semibold text-gray-700">
-                sales, new users, or any event
+                sales, new users, or any other event
               </span>{" "}
               sent directly to your Discord.
             </p>
-            <ul className="space-y-2 text-base/7 text-gray-600 text-left flex flex-col items-start sm:tiems-start">
+
+            <ul className="space-y-2 text-base/7 text-gray-600 text-left flex flex-col items-start">
               {[
                 "Real-time Discord alerts for critical events",
                 "Buy once, use forever",
                 "Track sales, new users, or any other event",
               ].map((item, index) => (
                 <li key={index} className="flex gap-1.5 items-center text-left">
-                  <Check className="size-5 shrink-0 text-brand-500" />
+                  <Check className="size-5 shrink-0 text-brand-700" />
                   {item}
                 </li>
               ))}
             </ul>
+
             <div className="w-full max-w-80">
               <ShinyButton
-                className=" relative z-10 h-14 w-full text-base shadow-lg transition-shadow duration-300 hover:shado-xl"
                 href="/sign-up"
+                className="relative z-10 h-14 w-full text-base shadow-lg transition-shadow duration-300 hover:shadow-xl"
               >
                 Start For Free Today
               </ShinyButton>
@@ -71,67 +74,71 @@ const Page = () => {
           </div>
         </MaxWidthWrapper>
       </section>
+
       <section className="relative bg-brand-25 pb-4">
         <div className="absolute inset-x-0 bottom-24 top-24 bg-brand-700" />
-        <div className="mx-auto relative">
+        <div className="relative mx-auto">
           <MaxWidthWrapper className="relative">
             <div className="-m-2 rounded-xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10 lg:-m-4 lg:rounded-2xl lg:p-4">
-              <MockDiscordUi>
+              <MockDiscordUI>
                 <AnimatedList>
                   <DiscordMessage
                     avatarSrc="/brand-asset-profile-picture.png"
-                    avatarAlt="DiscoRaccoon"
-                    username="DiscoRaccoon"
-                    timestamp="Today at 12:34 AM"
+                    avatarAlt="PingPanda Avatar"
+                    username="PingPanda"
+                    timestamp="Today at 12:35PM"
                     badgeText="SignUp"
                     badgeColor="#43b581"
                     title="👤 New user signed up"
                     content={{
-                      name: "Abhyan Morkal",
-                      email: "abhyanmorkal@gmail.com",
+                      name: "Mateo Ortiz",
+                      email: "m.ortiz19@gmail.com",
                     }}
                   />
                   <DiscordMessage
                     avatarSrc="/brand-asset-profile-picture.png"
-                    avatarAlt="DiscoRaccoon"
-                    username="DiscoRaccoon"
-                    timestamp="Today at 02:34 AM"
+                    avatarAlt="PingPanda Avatar"
+                    username="PingPanda"
+                    timestamp="Today at 12:35PM"
                     badgeText="Revenue"
                     badgeColor="#faa61a"
                     title="💰 Payment received"
                     content={{
-                      amount: "$45.00",
-                      email: "abhyanmorkal@gmail.com",
+                      amount: "$49.00",
+                      email: "zoe.martinez2001@email.com",
+                      plan: "PRO",
                     }}
                   />
                   <DiscordMessage
                     avatarSrc="/brand-asset-profile-picture.png"
-                    avatarAlt="DiscoRaccoon"
-                    username="DiscoRaccoon"
-                    timestamp="Today at 12:34 AM"
+                    avatarAlt="PingPanda Avatar"
+                    username="PingPanda"
+                    timestamp="Today at 5:11AM"
                     badgeText="Milestone"
                     badgeColor="#5865f2"
                     title="🚀 Revenue Milestone Achieved"
                     content={{
-                      recurringRevenue: "$500.00 USD",
-                      growth: "+7.2%",
+                      recurringRevenue: "$5.000 USD",
+                      growth: "+8.2%",
                     }}
                   />
                 </AnimatedList>
-              </MockDiscordUi>
+              </MockDiscordUI>
             </div>
           </MaxWidthWrapper>
         </div>
       </section>
+
       <section className="relative py-24 sm:py-32 bg-brand-25">
         <MaxWidthWrapper className="flex flex-col items-center gap-16 sm:gap-20">
           <div>
             <h2 className="text-center text-base/7 font-semibold text-brand-600">
               Intuitive Monitoring
             </h2>
-            <Heading>Stay ahead with real-time Insights</Heading>
+            <Heading>Stay ahead with real-time insights</Heading>
           </div>
-          <div className="grid gap-4 lg:grid-cols-3 lg:grid-row-2">
+
+          <div className="grid gap-4 lg:grid-cols-3 lg:grid-rows-2">
             {/* first bento grid element */}
             <div className="relative lg:row-span-2">
               <div className="absolute inset-px rounded-lg bg-white lg:rounded-l-[2rem]" />
@@ -143,7 +150,7 @@ const Page = () => {
                   </p>
                   <p className="mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center">
                     Get notified about critical events the moment they happen,
-                    no matter if you&apos;re at home or on the go.
+                    no matter if you're at home or on the go.
                   </p>
                 </div>
 
@@ -151,7 +158,7 @@ const Page = () => {
                   <div className="absolute inset-x-10 bottom-0 top-10 overflow-hidden rounded-t-[12cqw] border-x-[3cqw] border-t-[3cqw] border-gray-700 bg-gray-900 shadow-2xl">
                     <Image
                       className="size-full object-cover object-top"
-                      src="/phone-screen.jpg"
+                      src="/phone-screen.png"
                       alt="Phone screen displaying app interface"
                       fill
                     />
@@ -171,7 +178,7 @@ const Page = () => {
                     Track Any Event
                   </p>
                   <p className="mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center">
-                    From new user signups to successful payments, DiscoRaccoon
+                    From new user signups to successful payments, PingPanda
                     notifies you for all critical events in your SaaS.
                   </p>
                 </div>
@@ -227,7 +234,7 @@ const Page = () => {
                     Easy Integration
                   </p>
                   <p className="mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center">
-                    Connect DiscoRaccoon with your existing workflows in minutes
+                    Connect PingPanda with your existing workflows in minutes
                     and call our intuitive logging API from any language.
                   </p>
                 </div>
@@ -237,7 +244,7 @@ const Page = () => {
                     <div className="flex bg-gray-800/40 ring-1 ring-white/5">
                       <div className="-mb-px flex text-sm/6 font-medium text-gray-400">
                         <div className="border-b border-r border-b-white/20 border-r-white/10 bg-white/5 px-4 py-2 text-white">
-                          DiscoRaccoon.js
+                          pingpanda.js
                         </div>
                       </div>
                     </div>
@@ -272,6 +279,7 @@ const Page = () => {
           </div>
         </MaxWidthWrapper>
       </section>
+
       <section className="relative py-24 sm:py-32 bg-white">
         <MaxWidthWrapper className="flex flex-col items-center gap-16 sm:gap-20">
           <div>
@@ -293,9 +301,9 @@ const Page = () => {
               </div>
 
               <p className="text-base sm:text-lg lg:text-lg/8 font-medium tracking-tight text-brand-950 text-center lg:text-left text-pretty">
-                DiscoRaccoon has been a game-changer for me. I&apos;ve been
-                using it for two months now and seeing sales pop up in real-time
-                is super satisfying.
+                PingPanda has been a game-changer for me. I've been using it for
+                two months now and seeing sales pop up in real-time is super
+                satisfying.
               </p>
 
               <div className="flex flex-col justify-center lg:justify-start sm:flex-row items-center sm:items-start gap-4 mt-2">
@@ -327,9 +335,9 @@ const Page = () => {
               </div>
 
               <p className="text-base sm:text-lg lg:text-lg/8 font-medium tracking-tight text-brand-950 text-center lg:text-left text-pretty">
-                DiscoRaccoon&apos;s been paying off for our SaaS. Nice to have
-                simple way to see how we&apos;re doing day-to-day. Definitely
-                makes our lives easier.
+                PingPanda's been paying off for our SaaS. Nice to have simple
+                way to see how we're doing day-to-day. Definitely makes our
+                lives easier.
               </p>
 
               <div className="flex flex-col justify-center lg:justify-start sm:flex-row items-center sm:items-start gap-4 mt-2">
